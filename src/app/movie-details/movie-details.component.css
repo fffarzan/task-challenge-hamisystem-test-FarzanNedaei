@@ -1,0 +1,24 @@
+.movie-details img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+  margin-top: 10px;
+}
+
+.movie-details-desc-outer {
+  padding-left: 20px;
+}
+
+.movie-details-desc {
+  margin-bottom: 20px;
+}
+
+.movie-details p {
+  color: #bbb;
+  margin: 0;
+}
+
+.movie-details h2, .movie-details h4 {
+  color: #777;
+  margin-bottom: 5px;
+}
