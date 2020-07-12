@@ -1,6 +1,6 @@
 <div class="d-flex movie-list-searchBox">
   <i class="fa fa-search" aria-hidden="true"></i>
-  <!-- (ngModelChange)="" -->
-  <!-- [ngModel]="" -->
-  <input type="text" class="align-self-center" placeholder="search movie, actor, genre & etc">
+  <!--  -->
+  <input type="text" class="align-self-center" placeholder="search movie, actor, genre & etc"
+  [ngModel]="searchText" (ngModelChange)="onModelChange($event)">
 </div>

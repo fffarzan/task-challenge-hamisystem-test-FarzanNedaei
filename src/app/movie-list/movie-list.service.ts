@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { MovieList } from './movie-list.model';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class MovieListService {
   private movieList: MovieList;
 

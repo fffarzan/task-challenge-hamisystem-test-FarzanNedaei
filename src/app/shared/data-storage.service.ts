@@ -7,7 +7,9 @@ import { MovieDetails } from '../movie-details/movie-details.model';
 import { MovieDetailsService } from '../movie-details/movie-details.service';
 import { MovieListService } from '../movie-list/movie-list.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class DataStorageService {
   constructor(
     private http: HttpClient,

@@ -27,7 +27,7 @@ import { MovieListService } from './movie-list/movie-list.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [MovieDetailsService, DataStorageService, MovieListService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
