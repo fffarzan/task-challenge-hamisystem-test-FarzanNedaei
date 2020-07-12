@@ -11,6 +11,8 @@ import { MovieListService } from '../movie-list/movie-list.service';
   providedIn: 'root'
 })
 export class DataStorageService {
+  baseUrl: string = 'http://www.omdbapi.com/?apiKey=9af01761';
+
   constructor(
     private http: HttpClient,
     private movieDetailsService: MovieDetailsService,
@@ -30,11 +32,12 @@ export class DataStorageService {
       );
   }
 
-  fetchMovieDetails() {
+  fetchMovieDetails(movieId: string) {
     return this.http
       .get<MovieDetails>(
-        'http://www.omdbapi.com/?apiKey=9af01761&i=tt0060196',
+        this.baseUrl,
         {
+          params: { i: movieId },
           headers: new HttpHeaders({ 'Content-Type': 'application/json' })
         }
       )

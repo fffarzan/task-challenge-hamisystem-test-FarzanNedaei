@@ -1,4 +1,4 @@
-<a href="#" class="movie-item">
+<a [routerLink]="['/movie', moviePreview.imdbID]" class="movie-item">
   <img [src]="moviePreview.Poster" alt="{{ moviePreview.Title }}">
   <h4>{{ moviePreview.Title }}</h4>
   <p>{{ moviePreview.Year }}</p>

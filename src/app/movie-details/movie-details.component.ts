@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
 import { MovieDetailsService } from './movie-details.service';
 import { DataStorageService } from '../shared/data-storage.service';
+import { ActivatedRoute } from '@angular/router';
+import { MovieDetails } from './movie-details.model';
 
 @Component({
   selector: 'app-movie-details',
@@ -8,14 +11,18 @@ import { DataStorageService } from '../shared/data-storage.service';
   styleUrls: ['./movie-details.component.css']
 })
 export class MovieDetailsComponent implements OnInit {
+  movieId: string;
+  movieDetails: MovieDetails;
 
   constructor(
+    private route: ActivatedRoute,
     private movieDetailsService: MovieDetailsService,
     private dataStorageService: DataStorageService
   ) { }
 
   ngOnInit() {
-    this.dataStorageService.fetchMovieDetails().subscribe(() => console.log(this.movieDetailsService.getMovieDetails()))
-  }
+    this.route.params.subscribe(params => this.movieId = params['id']);
 
+    this.dataStorageService.fetchMovieDetails(this.movieId).subscribe(() => this.movieDetails = this.movieDetailsService.getMovieDetails());
+  }
 }

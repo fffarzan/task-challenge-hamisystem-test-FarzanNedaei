@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, OnDestroy } from '@angular/core';
 import { Search } from '../movie-list.model';
 
 @Component({
@@ -9,9 +9,8 @@ import { Search } from '../movie-list.model';
 export class MovieItemComponent implements OnInit {
   @Input() moviePreview: Search;
 
-  constructor() { }
+  constructor(private elementRef: ElementRef) { }
 
   ngOnInit() {
   }
-
 }

@@ -1,29 +1,29 @@
 <div class="container-fluid movie-details">
   <div class="row">
     <div class="col-4">
-      <img src="../../../assets/img/noimage.jpg" alt="noimage">
+      <img [src]="movieDetails.Poster" alt="{{ movieDetails.Title }}">
     </div>
     <div class="col-8 movie-details-desc-outer">
       <div class="row">
         <div class="col-12">
           <section class="movie-details-desc movie-details-preview">
-            <h2>Movie Name</h2>
-            <p>year: 2003</p>
-            <p>Released: 29 May 2004</p>
-            <p>Direction: name name</p>
-            <p>Genre: Dream</p>
+            <h2>{{ movieDetails.Title }}</h2>
+            <p>year: {{ movieDetails.Year }}</p>
+            <p>Released: {{ movieDetails.Released }}</p>
+            <p>Direction: {{ movieDetails.Director }}</p>
+            <p>Genre: {{ movieDetails.Genre }}</p>
           </section>
         </div>
         <div class="col-12">
           <section class="movie-details-desc movie-details-actors">
             <h4>Actors</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam beatae aliquid maiores deserunt quibusdam nemo fugit at minima quis totam similique, nostrum nihil blanditiis voluptatibus natus sit tenetur nulla laboriosam?</p>
+            <p>{{ movieDetails.Actors }}</p>
           </section>
         </div>
         <div class="col-12">
           <section class="movie-details-desc movie-details-pol">
             <h4>Pol</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias debitis illum harum sapiente asperiores voluptates dolorum voluptatum aut repudiandae omnis. Enim distinctio nihil soluta earum facilis ipsum laudantium animi minima!</p>
+            <p>{{ movieDetails.Plot }}</p>
           </section>
         </div>
         <div class="col-12">
