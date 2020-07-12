@@ -1,0 +1,24 @@
+.rating {
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 7px;
+}
+
+.rating-desc p {
+  margin: 0;
+  color: #777;
+}
+
+.rating-bar-outer {
+  width: 100%;
+  height: 15px;
+  background-color: white;
+  border: 1px solid #999;
+  border-radius: 10px;
+}
+
+.rating-bar-inner {
+  height: 15px;
+  background-color: #ccc;
+  border-radius: 10px;
+}

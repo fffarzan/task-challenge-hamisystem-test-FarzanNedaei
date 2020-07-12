@@ -10,7 +10,7 @@ import { SearchBoxComponent } from './movie-list/search-box/search-box.component
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieItemComponent } from './movie-list/movie-item/movie-item.component';
 import { PaginationComponent } from './movie-list/pagination/pagination.component';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { RatingComponent } from './movie-details/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +19,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SearchBoxComponent,
     MovieDetailsComponent,
     MovieItemComponent,
-    PaginationComponent
+    PaginationComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    NgxPaginationModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

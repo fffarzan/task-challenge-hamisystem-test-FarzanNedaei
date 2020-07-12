@@ -43,6 +43,7 @@
   }
   .movie-item h4 {
     font-size: 16px;
+    max-width: 130px;
   }
   .movie-item p {
     font-size: 14px;

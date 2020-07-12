@@ -1,0 +1,9 @@
+<section class="rating">
+  <div class="d-flex flex-row flex-wrap justify-content-between rating-desc">
+    <p>{{ rating.Source }}</p>
+    <p>{{ rating.Value }}</p>
+  </div>
+  <div class="rating-bar-outer">
+    <div class="rating-bar-inner" [ngStyle]="{'width': ratingValue}"></div>
+  </div>
+</section>
