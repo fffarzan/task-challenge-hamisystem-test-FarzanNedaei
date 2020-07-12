@@ -13,6 +13,7 @@ export class MovieListComponent implements OnInit {
   searchList: Search[] = [];
   movieList: Search[] = [];
   searchText: string;
+  paginationNum: number;
 
   constructor(
     private dataStorageService: DataStorageService,
@@ -20,22 +21,28 @@ export class MovieListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
   }
 
   onSearchResult(searchText: string) {
-    this.searchText = searchText;
-    this.getMovies(searchText, '1')
+    if (searchText.length >= 3) {
+      this.searchText = searchText;
+      this.getMovies(searchText, '1');
+    } else {
+      this.searchText = '';
+      this.movieList = [];
+    }
+    
   }
 
-  onChangePage(pageNum: number) {
-    this.getMovies(this.searchText, toString(pageNum));
+  onChangePage(currentPage: number) {
+    this.getMovies(this.searchText, currentPage.toString());
   }
 
-  getMovies(searchResult: string, pageNum: string) {
+  private getMovies(searchResult: string, pageNum: string) {
     this.dataStorageService.fetchMovieList(searchResult, pageNum).subscribe(() => {
       this.searchList = this.movieListService.getMovieList().Search;
-      console.log(this.movieListService.getMovieList())
+      this.paginationNum = +this.movieListService.getMovieList().totalResults;
+
       this.movieList = this.searchList.filter(
         movie => Object.values(movie).some(val => val.toLowerCase().includes(searchResult.toLowerCase()))
       );

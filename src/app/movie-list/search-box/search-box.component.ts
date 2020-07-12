@@ -8,8 +8,8 @@ import { Search } from '../movie-list.model';
   styleUrls: ['./search-box.component.css']
 })
 export class SearchBoxComponent implements OnInit {
-  searchStr: string;
   @Output() searchText = new EventEmitter<string>();
+  searchStr: string;
 
   constructor() { }
 
@@ -17,7 +17,6 @@ export class SearchBoxComponent implements OnInit {
   }
 
   onModelChange(searchStr: string) {
-    // if (searchText === '') this.searchListFiltered = [];
     this.searchText.emit(searchStr);
   }
 }

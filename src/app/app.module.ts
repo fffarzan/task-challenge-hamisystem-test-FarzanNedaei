@@ -9,10 +9,8 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { SearchBoxComponent } from './movie-list/search-box/search-box.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieItemComponent } from './movie-list/movie-item/movie-item.component';
-import { MovieDetailsService } from './movie-details/movie-details.service';
-import { DataStorageService } from './shared/data-storage.service';
-import { MovieListService } from './movie-list/movie-list.service';
 import { PaginationComponent } from './movie-list/pagination/pagination.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -27,7 +25,8 @@ import { PaginationComponent } from './movie-list/pagination/pagination.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,3 +5,7 @@ ul.movie-list-pagination {
 .movie-list-pagination a {
   color: #bbb;
 }
+
+.page-link {
+  cursor: pointer;
+}
