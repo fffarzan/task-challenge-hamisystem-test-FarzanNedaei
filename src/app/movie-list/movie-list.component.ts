@@ -11,6 +11,7 @@ import { Search } from './movie-list.model';
 })
 export class MovieListComponent implements OnInit {
   searchList: Search[] = [];
+  movieList: Search[] = [];
 
   constructor(
     private dataStorageService: DataStorageService,
@@ -21,5 +22,9 @@ export class MovieListComponent implements OnInit {
     this.dataStorageService.fetchMovieList().subscribe(
       () => this.searchList = this.movieListService.getMovieList().Search
     );
+  }
+
+  onSearchResult(searchResult: Search[]) {
+    this.movieList = searchResult;
   }
 }

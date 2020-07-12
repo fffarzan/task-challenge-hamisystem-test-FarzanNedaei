@@ -1,12 +1,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
-      <app-search-box [searchList]="searchList"></app-search-box>
+      <app-search-box [searchList]="searchList" (searchResult)="onSearchResult($event)"></app-search-box>
     </div>
     <div class="col-12">
       <div class="d-flex flex-row flex-wrap">
-        <app-movie-item></app-movie-item>
-        <app-movie-item></app-movie-item>
+          <app-movie-item *ngFor="let movie of movieList" [moviePreview]="movie"></app-movie-item>
       </div>
     </div>
   </div>

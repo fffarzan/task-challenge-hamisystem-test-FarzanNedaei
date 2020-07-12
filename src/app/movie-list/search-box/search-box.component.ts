@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Search } from '../movie-list.model';
 
@@ -9,14 +9,21 @@ import { Search } from '../movie-list.model';
 })
 export class SearchBoxComponent implements OnInit {
   @Input() searchList: Search[];
-  searchText: string;
+  @Output() searchResult = new EventEmitter<Search[]>();
+  searchListFiltered: Search[];
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onModelChange(str: string) {
-    this.searchText = str;
+  onModelChange(searchText: string) {
+    this.searchListFiltered = this.searchList.filter(
+      movie => Object.values(movie).some(val => val.toLowerCase().includes(searchText.toLowerCase()))
+    );
+
+    if (searchText === '') this.searchListFiltered = [];
+
+    this.searchResult.emit(this.searchListFiltered);
   }
 }

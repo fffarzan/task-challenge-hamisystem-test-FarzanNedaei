@@ -1,6 +1,6 @@
-<div class="movie-item">
-  <img src="../../../assets/img/noimage.jpg" alt="notfound">
-  <h4>Movie Name</h4>
-  <p>2003-2009</p>
-  <span>series</span>
-</div>
+<a href="#" class="movie-item">
+  <img [src]="moviePreview.Poster" alt="{{ moviePreview.Title }}">
+  <h4>{{ moviePreview.Title }}</h4>
+  <p>{{ moviePreview.Year }}</p>
+  <span>{{ moviePreview.Type }}</span>
+</a>
