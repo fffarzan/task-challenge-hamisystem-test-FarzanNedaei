@@ -1,7 +1,7 @@
 <div class="container-fluid movie-details">
   <div class="row">
     <div class="col-12 col-lg-4">
-      <img [src]="movieDetails?.Poster" alt="{{ movieDetails?.Title }}">
+      <img [src]="movieDetails?.Poster !== 'N/A'? movieDetails?.Poster : '/assets/img/noimage.jpg'" alt="{{ movieDetails?.Title }}">
     </div>
     <div class="col-12 col-lg-8 movie-details-desc-outer">
       <div class="row">

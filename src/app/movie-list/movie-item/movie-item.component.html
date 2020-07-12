@@ -1,5 +1,6 @@
 <a [routerLink]="['/movie', moviePreview.imdbID]" class="movie-item">
-  <img [src]="moviePreview.Poster" alt="{{ moviePreview.Title }}">
+  <img [src]="moviePreview.Poster !== 'N/A' ? moviePreview.Poster : '/assets/img/noimage.jpg'"
+    alt="{{ moviePreview.Title }}">
   <h4>{{ moviePreview.Title }}</h4>
   <p>{{ moviePreview.Year }}</p>
   <span>{{ moviePreview.Type }}</span>
