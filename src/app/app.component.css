@@ -1,5 +1,11 @@
 .movie-list {
   background-color: rgb(242, 242, 242);
   min-height: 100vh;
-  padding: 60px;
+  padding: 15px;
+}
+
+@media screen and (min-width: 992px) {
+  .movie-list {
+    padding: 60px;
+  }
 }

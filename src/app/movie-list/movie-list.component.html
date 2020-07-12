@@ -4,7 +4,7 @@
       <app-search-box (searchText)="onSearchResult($event)"></app-search-box>
     </div>
     <div class="col-12">
-      <div class="d-flex flex-row flex-wrap">
+      <div class="d-flex flex-column flex-md-row flex-wrap">
           <app-movie-item *ngFor="let movie of movieList" [moviePreview]="movie"></app-movie-item>
       </div>
     </div>
