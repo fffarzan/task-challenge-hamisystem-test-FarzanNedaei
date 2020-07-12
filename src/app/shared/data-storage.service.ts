@@ -19,11 +19,15 @@ export class DataStorageService {
     private movieListService: MovieListService
   ) { }
 
-  fetchMovieList() {
+  fetchMovieList(searchResult: string, pageNum?: string) {
     return this.http
       .get<MovieList>(
-        'http://www.omdbapi.com/?apiKey=9af01761&s=bad&page=1',
+        this.baseUrl,
         {
+          params: {
+            s: searchResult,
+            page: '1'
+          },
           headers: new HttpHeaders({ 'Content-Type': 'application/json' })
         }
       )

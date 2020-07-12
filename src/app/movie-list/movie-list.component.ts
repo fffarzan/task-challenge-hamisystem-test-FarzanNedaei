@@ -19,12 +19,22 @@ export class MovieListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dataStorageService.fetchMovieList().subscribe(
-      () => this.searchList = this.movieListService.getMovieList().Search
-    );
+
   }
 
-  onSearchResult(searchResult: Search[]) {
-    this.movieList = searchResult;
+  onSearchResult(searchResult: string) {
+    // get pagination number
+
+    this.getMovies(searchResult)
+  }
+
+  getMovies(searchResult: string) {
+    this.dataStorageService.fetchMovieList(searchResult).subscribe(() => {
+      this.searchList = this.movieListService.getMovieList().Search;
+      console.log(this.movieListService.getMovieList())
+      this.movieList = this.searchList.filter(
+        movie => Object.values(movie).some(val => val.toLowerCase().includes(searchResult.toLowerCase()))
+      );
+    });
   }
 }

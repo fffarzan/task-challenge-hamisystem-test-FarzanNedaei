@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
-      <app-search-box [searchList]="searchList" (searchResult)="onSearchResult($event)"></app-search-box>
+      <app-search-box (searchText)="onSearchResult($event)"></app-search-box>
     </div>
     <div class="col-12">
       <div class="d-flex flex-row flex-wrap">
