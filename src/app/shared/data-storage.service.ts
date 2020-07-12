@@ -19,14 +19,14 @@ export class DataStorageService {
     private movieListService: MovieListService
   ) { }
 
-  fetchMovieList(searchResult: string, pageNum?: string) {
+  fetchMovieList(searchResult: string, pageNum: string) {
     return this.http
       .get<MovieList>(
         this.baseUrl,
         {
           params: {
             s: searchResult,
-            page: '1'
+            page: pageNum
           },
           headers: new HttpHeaders({ 'Content-Type': 'application/json' })
         }

@@ -12,6 +12,7 @@ import { Search } from './movie-list.model';
 export class MovieListComponent implements OnInit {
   searchList: Search[] = [];
   movieList: Search[] = [];
+  searchText: string;
 
   constructor(
     private dataStorageService: DataStorageService,
@@ -22,14 +23,17 @@ export class MovieListComponent implements OnInit {
 
   }
 
-  onSearchResult(searchResult: string) {
-    // get pagination number
-
-    this.getMovies(searchResult)
+  onSearchResult(searchText: string) {
+    this.searchText = searchText;
+    this.getMovies(searchText, '1')
   }
 
-  getMovies(searchResult: string) {
-    this.dataStorageService.fetchMovieList(searchResult).subscribe(() => {
+  onChangePage(pageNum: number) {
+    this.getMovies(this.searchText, toString(pageNum));
+  }
+
+  getMovies(searchResult: string, pageNum: string) {
+    this.dataStorageService.fetchMovieList(searchResult, pageNum).subscribe(() => {
       this.searchList = this.movieListService.getMovieList().Search;
       console.log(this.movieListService.getMovieList())
       this.movieList = this.searchList.filter(

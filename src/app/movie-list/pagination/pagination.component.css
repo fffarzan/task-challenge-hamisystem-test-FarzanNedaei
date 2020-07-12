@@ -1,0 +1,7 @@
+ul.movie-list-pagination {
+  margin: 20px 0;
+}
+
+.movie-list-pagination a {
+  color: #bbb;
+}

@@ -12,6 +12,7 @@ import { MovieItemComponent } from './movie-list/movie-item/movie-item.component
 import { MovieDetailsService } from './movie-details/movie-details.service';
 import { DataStorageService } from './shared/data-storage.service';
 import { MovieListService } from './movie-list/movie-list.service';
+import { PaginationComponent } from './movie-list/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MovieListService } from './movie-list/movie-list.service';
     MovieListComponent,
     SearchBoxComponent,
     MovieDetailsComponent,
-    MovieItemComponent
+    MovieItemComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
