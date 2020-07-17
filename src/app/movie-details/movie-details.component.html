@@ -1,35 +1,35 @@
 <div class="container-fluid movie-details">
   <div class="row">
     <div class="col-12 col-lg-4">
-      <img [src]="movieDetails?.Poster !== 'N/A'? movieDetails?.Poster : '/assets/img/noimage.jpg'" alt="{{ movieDetails?.Title }}">
+      <img [src]="movieDetails.Poster !== 'N/A'? movieDetails.Poster : '/assets/img/noimage.jpg'" alt="{{ movieDetails.Title }}">
     </div>
     <div class="col-12 col-lg-8 movie-details-desc-outer">
       <div class="row">
         <div class="col-12">
           <section class="movie-details-desc movie-details-preview">
-            <h2>{{ movieDetails?.Title }}</h2>
-            <p>year: {{ movieDetails?.Year }}</p>
-            <p>Released: {{ movieDetails?.Released }}</p>
-            <p>Direction: {{ movieDetails?.Director }}</p>
-            <p>Genre: {{ movieDetails?.Genre }}</p>
+            <h2>{{ movieDetails.Title }}</h2>
+            <p>year: {{ movieDetails.Year }}</p>
+            <p>Released: {{ movieDetails.Released }}</p>
+            <p>Direction: {{ movieDetails.Director }}</p>
+            <p>Genre: {{ movieDetails.Genre }}</p>
           </section>
         </div>
         <div class="col-12">
           <section class="movie-details-desc movie-details-actors">
             <h4>Actors</h4>
-            <p>{{ movieDetails?.Actors }}</p>
+            <p>{{ movieDetails.Actors }}</p>
           </section>
         </div>
         <div class="col-12">
           <section class="movie-details-desc movie-details-pol">
             <h4>Pol</h4>
-            <p>{{ movieDetails?.Plot }}</p>
+            <p>{{ movieDetails.Plot }}</p>
           </section>
         </div>
         <div class="col-12">
           <section class="movie-details-rating">
             <h4>Rating</h4>
-            <app-rating *ngFor="let rating of movieDetails?.Ratings" [rating]="rating"></app-rating>
+            <app-rating *ngFor="let rating of movieDetails.Ratings" [rating]="rating"></app-rating>
           </section>
         </div>
       </div>

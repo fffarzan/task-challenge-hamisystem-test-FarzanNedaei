@@ -21,8 +21,6 @@ export class MovieDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => this.movieId = params['id']);
-
-    this.dataStorageService.fetchMovieDetails(this.movieId).subscribe(() => this.movieDetails = this.movieDetailsService.getMovieDetails());
+    this.route.data.subscribe(data => this.movieDetails = data.movieDetails);
   }
 }
